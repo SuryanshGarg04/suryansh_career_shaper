@@ -1,0 +1,20 @@
+from datetime import datetime
+from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey, Index
+from app.database import Base
+
+class TelemetryLog(Base):
+    __tablename__ = "telemetry_logs"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    timestamp = Column(DateTime, default=datetime.utcnow, index=True)
+    vehicle_id = Column(String(32), ForeignKey("vehicles.vehicle_id"), nullable=False, index=True)
+    latitude = Column(Float, nullable=False)
+    longitude = Column(Float, nullable=False)
+    speed_kmh = Column(Float, default=0.0)
+    fuel_pct = Column(Float, default=100.0)
+    anomaly_flag = Column(String(64), default="None", index=True)
+    notes = Column(String(256), nullable=True)
+
+    __table_args__ = (
+        Index("idx_vehicle_timestamp", "vehicle_id", "timestamp"),
+    )

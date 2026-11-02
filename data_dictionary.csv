@@ -1,0 +1,15 @@
+column_name,data_type,sample_value_1,sample_value_2,sample_value_3,nullable,description_fill_in
+timestamp,datetime,2024-01-01 06:15:00,2024-01-01 07:19:00,2024-01-01 07:43:00,No,timestamp — Sequential departure or telemetry ping timestamp (YYYY-MM-DD HH:MM:SS)
+trip_id,string,TRP10001,TRP10002,TRP10003,No,trip_id — Unique alphanumeric identifier for each dispatch trip
+vehicle_id,string,VEH166,VEH019,VEH113,No,vehicle_id — Unique commercial fleet vehicle identifier
+vehicle_type,string,Light_Van,Electric_Van,Heavy_Truck,No,vehicle_type — Classification category of the vehicle (Heavy_Truck, Medium_Duty, Light_Van, Electric_Van)
+origin_hub,string,HUB_CCU,HUB_JAI,HUB_PAT,No,origin_hub — Departure distribution center/logistics hub code
+dest_hub,string,HUB_JAI,HUB_HYD,HUB_DEL,No,dest_hub — Destination distribution center/logistics hub code
+distance_km,float,629.0,898.4,1179.0,No,distance_km — Highway corridor transit distance in kilometers
+payload_kg,float,2803.9,944.8,20076.2,No,payload_kg — Total cargo payload weight loaded in kilograms
+transit_time_hrs,float,11.0,15.3,18.22,No,transit_time_hrs — Total calculated trip duration including delays in hours
+fuel_consumed_l,float,63.46,0.0,354.76,No,fuel_consumed_l — Litres of fuel consumed (0.0 for electric vehicles)
+avg_speed_kmh,float,57.2,58.7,64.7,No,avg_speed_kmh — Average sustained vehicle cruising speed in km/h
+shipment_status,string,In_Transit,Delivered,Delayed,No,shipment_status — Final operational delivery state (Delivered, In_Transit, Delayed, Cancelled)
+transit_delay_mins,integer,0,0,46,No,transit_delay_mins — Minutes of recorded trip delay due to congestion, weather, or breakdowns
+anomaly_flag,string,None,None,Traffic_Congestion,No,anomaly_flag — Categorical label for operational exceptions (None, Traffic_Congestion, Mechanical_Fault, Geofence_Deviation, Weather_Monsoon)
